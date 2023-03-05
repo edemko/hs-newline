@@ -56,7 +56,7 @@ display :: [Line a] -> String
 display ls0 = "offset,length,terminator\n" ++ go ls0
   where
   go [] = ""
-  go (l:ls) = go1 l ++ display ls
+  go (l:ls) = go1 l ++ go ls
   go1 l = concat
     [ show l.startOffset
     , ","

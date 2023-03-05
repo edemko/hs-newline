@@ -7,3 +7,8 @@
 ## 0.0.2.0 -- 2023-03-05
 
 * Add LineMap module.
+
+## 0.0.2.1 -- 2023-03-05
+
+* Fixed stupid bug.
+  Serves me right for not testing <.<
