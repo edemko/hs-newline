@@ -1,6 +1,6 @@
 cabal-version: 3.0
 name: newline
-version: 0.0.1.0
+version: 0.0.2.0
 synopsis: newline specifications as values
 description:
   Defines a Newline data type, which is essentially a non-empty string,
@@ -18,6 +18,11 @@ description:
   This is because such improvements are premature for my personal case,
   but feel free to submit a PR for either.
   I'll want to make this package a central location for these tasks.
+
+  This package also contains algorithms to map lines into byte ranges for a file.
+  There is also an associated file format to serialize this data.
+  See the `Text.Newline.LineMap` module for this feature.
+
 category: Text
 homepage: https://github.com/edemko/hs-newline
 bug-reports: https://github.com/edemko/hs-newline/issues
@@ -36,9 +41,11 @@ library
   hs-source-dirs: src
   exposed-modules:
     Text.Newline
+    Text.Newline.LineMap
   -- other-modules:
   build-depends:
     , base >=4.11.1 && <4.17
+    , bytestring >=0.11 && <0.12
     , text >=2.0 && <2.1
   default-language: Haskell2010
-  ghc-options: -O2 -Wall -Wunticked-promoted-constructors
+  ghc-options: -Wall -Wunticked-promoted-constructors
